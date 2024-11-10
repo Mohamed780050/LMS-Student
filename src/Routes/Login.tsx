@@ -17,10 +17,27 @@ function Login() {
   } = useForm<z.infer<typeof validate.loginvalidation>>({
     resolver: zodResolver(validate.loginvalidation),
   });
+  const date = new Date();
   async function SubmitIt(values: z.infer<typeof validate.loginvalidation>) {
     try {
+      date.setDate(date.getTime() * 1000 * 60 * 60 * 24 * 2);
       const response = await Axios.post("/auth", values);
-      console.log(response);
+      localStorage.setItem("userInfo", JSON.stringify(response.data.info));
+      document.cookie =
+        "lms-student" +
+        "=" +
+        `${response.data.jwt}` +
+        ";" +
+        "expires=" +
+        `${date.toUTCString()}` +
+        ";" +
+        "path=/;";
+      console.log(
+        document.cookie
+          .split(";")
+          .find((value) => value.includes("lms-student"))
+      );
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }
@@ -30,9 +47,9 @@ function Login() {
       <form
         className="border p-5 space-y-3 min-w-72 sm:min-w-96"
         onSubmit={handleSubmit(SubmitIt)}
-        >
-          <h2 className="relative bg-sky-600 text-white font-bold text-center teacher">
-          Teachers
+      >
+        <h2 className="relative bg-sky-600 text-white font-bold text-center teacher">
+          Students
         </h2>
         <div className="font-bold text-xl text-sky-600 flex flex-col items-center">
           <Logo />

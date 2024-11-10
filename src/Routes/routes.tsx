@@ -9,7 +9,13 @@ import Courses from "./Courses";
 import SignUp from "./SignUp";
 import Login from "./Login";
 import ProtectedRoutes from "./ProtectedRoutes";
-const isAllowed = false;
+// TODO: search on chatGPT to know how to add and event listener to alway watch cookies
+const data = document.cookie
+  .split(";")
+  .find((value) => value.includes("lms-student"))
+  ? document.cookie.split(";").find((value) => value.includes("lms-student"))
+  : null;
+const isAllowed = data !== null ? true : false;
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
