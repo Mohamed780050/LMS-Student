@@ -23,3 +23,14 @@ a.active {
   right: 0px;
   top: 24px;
 }
+.categoryScroll::-webkit-scrollbar {
+  height: 8px;
+}
+.categoryScroll::-webkit-scrollbar-track {
+  background-color: #eee;
+  border-radius: 10px;
+}
+.categoryScroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #0369a1;
+}
