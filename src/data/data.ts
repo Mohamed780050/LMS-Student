@@ -10,19 +10,19 @@ import {
   FcSalesPerformance,
   FcSportsMode,
 } from "react-icons/fc";
-import { Compass, LucideListVideo } from "lucide-react";
+import { Compass, Video } from "lucide-react";
 import React from "react";
 
 const NavBarLinks: NavBarLinksType[] = [
   {
-    icon: React.createElement(Compass, { size: 30 }),
-    label: "Browse",
+    icon: React.createElement(Video, { size: 30 }),
+    label: "My Courses",
     link: "/",
   },
   {
-    icon: React.createElement(LucideListVideo, { size: 30 }),
-    label: "My Courses",
-    link: "/mycourses",
+    icon: React.createElement(Compass, { size: 30 }),
+    label: "Search",
+    link: "/search",
   },
 ];
 

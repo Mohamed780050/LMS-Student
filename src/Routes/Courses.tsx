@@ -1,8 +1,9 @@
+import Category from "@/components/Category";
 
 function Courses() {
   return (
-    <div>
-      Courses
+    <div className="p-6">
+      <Category />
     </div>
   );
 }

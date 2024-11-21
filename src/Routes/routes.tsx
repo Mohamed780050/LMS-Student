@@ -32,7 +32,7 @@ const routes = createBrowserRouter(
           }
         />
         <Route
-          path="mycourses"
+          path="search"
           element={
             <ProtectedRoutes
               redirctedPath="Authentaction/login"
