@@ -15,3 +15,28 @@ export interface SignUpInputsType {
   placeholder: string;
   type: string;
 }
+export interface CourseInfo {
+  _id: string;
+  courseName: string;
+  Description: string;
+  ImageURL: string;
+  price: number;
+  IsPublished: boolean;
+  Date: {
+    normal: string;
+    full: string;
+  };
+  catagory: string;
+  AuthorId: string;
+  completed: number;
+  total: 5;
+  Attachments: {
+    id: string;
+    filename: string;
+    data: string;
+    completed: boolean;
+  }[];
+  chapters: string[];
+  students: number;
+  rating: number;
+}

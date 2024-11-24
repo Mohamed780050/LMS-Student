@@ -2,13 +2,15 @@ import Main from "@/Layout/main";
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Outlet,
   Route,
 } from "react-router-dom";
-import Home from "./Home";
-import Courses from "./Courses";
-import SignUp from "./SignUp";
-import Login from "./Login";
-import ProtectedRoutes from "./ProtectedRoutes";
+import Home from "./pages/Home";
+import Courses from "./pages/Courses";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import ProtectedRoutes from "./pages/ProtectedRoutes";
+import CoursePage from "./pages/CoursePage";
 // TODO: search on chatGPT to know how to add and event listener to alway watch cookies
 const data = document.cookie
   .split(";")
@@ -38,10 +40,13 @@ const routes = createBrowserRouter(
               redirctedPath="Authentaction/login"
               isAllowed={isAllowed}
             >
-              <Courses />
+              <Outlet />
             </ProtectedRoutes>
           }
-        />
+        >
+          <Route index element={<Courses />} />
+          <Route path=":id" element={<CoursePage />} />
+        </Route>
       </Route>
       <Route path="Authentaction">
         <Route

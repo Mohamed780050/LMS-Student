@@ -15,7 +15,9 @@ function NavBar() {
               <Sidebar />
             </SheetContent>
           </Sheet>
-          <SearchInput/>
+          <div className="hidden md:block min-w-80">
+            <SearchInput />
+          </div>
         </div>
         <div>Info</div>
       </nav>
