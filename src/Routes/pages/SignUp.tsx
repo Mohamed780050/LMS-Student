@@ -13,7 +13,7 @@ import { setPasswordLength } from "@/Redux/passwordLength";
 import PasswordStrengthMeter from "@/components/PasswordChecker";
 import toast from "react-hot-toast";
 function SignUp() {
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
   const {
     handleSubmit,
     register,
@@ -25,8 +25,7 @@ function SignUp() {
     try {
       if (values.password !== values.confirmPassword)
         throw Error("Not the same password");
-      const response = await Axios.post("/teacher", values);
-      console.log(response);
+      await Axios.post("/teacher", values);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       toast.error(err?.response?.data?.message, {
@@ -60,7 +59,7 @@ function SignUp() {
               {...register(input.name)}
               onChange={
                 input.name === "password"
-                  ? (e) => dispath(setPasswordLength(e.target.value))
+                  ? (e) => dispatch(setPasswordLength(e.target.value))
                   : undefined
               }
             />

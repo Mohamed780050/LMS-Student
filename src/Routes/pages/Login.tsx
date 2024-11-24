@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import validate from "@/validation/validate";
 import z from "zod";
 import Axios from "@/config/Axios";
+import toast from "react-hot-toast";
 
 function Login() {
   const {
@@ -38,8 +39,8 @@ function Login() {
           .find((value) => value.includes("lms-student"))
       );
       window.location.reload();
-    } catch (err) {
-      console.log(err);
+    } catch (err: any) {
+      toast.error(`${err.response.data.message}`);
     }
   }
   return (
