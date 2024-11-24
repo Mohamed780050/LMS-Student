@@ -40,3 +40,18 @@ export interface CourseInfo {
   students: number;
   rating: number;
 }
+export interface CourseChaptersInterface {
+  _id: string;
+  CourseId: string;
+  AuthorId: string;
+  isFree: boolean;
+  isPublished: boolean;
+  videoURL: string;
+  chapterName: string;
+  description: string;
+  position: number;
+  Date: {
+    normal: string;
+    full: string;
+  };
+}

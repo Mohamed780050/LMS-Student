@@ -16,7 +16,7 @@ function CourseCard({
 }) {
   return (
     <li className="group hover:shadow-sm transition overflow-hidden border rounded-lg p-3 h-full">
-      <Link to={`${_id}`}>
+      <Link to={`/course/${_id}`}>
         <div className="relative w-full aspect-video rounded-sm overflow-hidden">
           <img
             className="object-cover hover:scale-105 transition"

@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
   categorySelected: "",
-  courseTitle:""
+  courseTitle: "",
 };
 export const global = createSlice({
   name: "global",
@@ -17,5 +17,5 @@ export const global = createSlice({
   },
 });
 
-export const { changeCategory,changeCourseTitle } = global.actions;
+export const { changeCategory, changeCourseTitle } = global.actions;
 export default global.reducer;

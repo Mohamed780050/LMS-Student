@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import passwordLength from "./passwordLength";
 import global from "./global";
+import CourseInfo from "./CourseInfo";
+import chapters from "./chapters";
 // ...
 
 export const store = configureStore({
   reducer: {
     passwordLength: passwordLength,
     global: global,
+    CourseInfo: CourseInfo,
+    chapters: chapters,
   },
 });
 
