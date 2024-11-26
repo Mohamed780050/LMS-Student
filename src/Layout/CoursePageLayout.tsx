@@ -13,13 +13,13 @@ function CoursePageLayout() {
   });
   return (
     <div className="h-full">
-      <div className="h-[80px] md:pl-80 w-full fixed inset-y-0 z-50 ">
+      <div className="h-[80px] md:pl-60 w-full fixed inset-y-0 z-50 ">
         <CourseNavbar />
       </div>
-      <div className="hidden md:flex h-full w-80 flex-col fixed inset-y-0 z-50">
+      <div className="hidden md:flex h-full w-60 flex-col fixed inset-y-0 z-50">
         <CourseSidebar isLoading={isLoading} />
       </div>
-      <main className="md:pl-80 h-full pt-[80px]">
+      <main className="md:pl-60 h-full pt-[80px]">
         <CoursePage isLoading={isLoading} />
       </main>
     </div>

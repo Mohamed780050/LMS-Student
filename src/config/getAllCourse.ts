@@ -7,7 +7,6 @@ export default async function getAllCourses(category?: string, title?: string) {
         title ? `&title=${title}` : ""
       }`
     );
-    console.log(response);
     return response.data.Courses;
   } catch (err) {
     console.log(err);
