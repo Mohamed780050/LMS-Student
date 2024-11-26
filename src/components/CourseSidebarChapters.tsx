@@ -1,5 +1,5 @@
 import { RootState } from "@/Redux/store";
-import { Lock } from "lucide-react";
+import { Lock, PlayCircle } from "lucide-react";
 import { useSelector } from "react-redux";
 
 function CourseSidebarChapters() {
@@ -25,7 +25,7 @@ function CourseSidebarChapters() {
                 ""
               }`}
             >
-              <Lock size={22} />
+              {chapter.isFree ? <PlayCircle size={22} /> : <Lock size={22} />}
               <p>{chapter.chapterName}</p>
             </div>
           </li>

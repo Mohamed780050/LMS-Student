@@ -6,7 +6,7 @@ export default async function getAllCourseChapter(
 ) {
   try {
     const response = await Axios.get(
-      `/chapters/?CourseId=${courseId}&AuthorId=${AuthorId}`
+      `/chapters/published/?CourseId=${courseId}&AuthorId=${AuthorId}`
     );
     console.log(response);
     return response.data;
