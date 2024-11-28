@@ -8,6 +8,7 @@ function CourseSidebar({ isLoading }: { isLoading: boolean }) {
   const { courseName } = useSelector(
     (state: RootState) => state.CourseInfo.course
   );
+  console.log(isLoading);
   return (
     <div className="h-full border-r flex flex-col overflow-y-auto shadow-sm">
       <div className="p-7 flex items-center justify-center border-b">

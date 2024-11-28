@@ -9,6 +9,7 @@ export default async function getACourse(id: string) {
   try {
     store.dispatch(changeIsCourseLoading(true));
     const response = await Axios.get(`/courses/${id}`);
+    console.log(response)
     store.dispatch(changeCourseInfo(response.data));
     const Chapters = await getAllCourseChapter(
       response.data._id,

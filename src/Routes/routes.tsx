@@ -56,7 +56,10 @@ const routes = createBrowserRouter(
             <CoursePageLayout />
           </ProtectedRoutes>
         }
-      />
+      >
+        <Route index element={<CoursePage />} />
+        <Route path="chapter/:chapterId" element={<h1>Chapter Name</h1>} />
+      </Route>
       <Route path="Authentaction">
         <Route
           path="signup"

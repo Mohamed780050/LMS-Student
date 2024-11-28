@@ -3,12 +3,12 @@ import CourseSidebar from "@/components/CourseSidebar";
 import getACourse from "@/config/getACourse";
 import CoursePage from "@/Routes/pages/CoursePage";
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 
 function CoursePageLayout() {
   const { id } = useParams();
   const { isLoading } = useQuery({
-    queryKey: [""],
+    queryKey: ["",CoursePageLayout],
     queryFn: () => getACourse(`${id}`),
   });
   return (
@@ -20,7 +20,7 @@ function CoursePageLayout() {
         <CourseSidebar isLoading={isLoading} />
       </div>
       <main className="md:pl-60 h-full pt-[80px]">
-        <CoursePage isLoading={isLoading} />
+        <Outlet />
       </main>
     </div>
   );
