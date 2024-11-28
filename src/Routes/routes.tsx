@@ -2,7 +2,6 @@ import Main from "@/Layout/main";
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  Outlet,
   Route,
 } from "react-router-dom";
 import Home from "./pages/Home";
@@ -57,8 +56,28 @@ const routes = createBrowserRouter(
           </ProtectedRoutes>
         }
       >
-        <Route index element={<CoursePage />} />
-        <Route path="chapter/:chapterId" element={<h1>Chapter Name</h1>} />
+        <Route
+          index
+          element={
+            <ProtectedRoutes
+              redirctedPath="Authentaction/login"
+              isAllowed={isAllowed}
+            >
+              <CoursePage />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="chapter/:chapterId"
+          element={
+            <ProtectedRoutes
+              redirctedPath="Authentaction/login"
+              isAllowed={isAllowed}
+            >
+              <h1>Chapter Name</h1>
+            </ProtectedRoutes>
+          }
+        />
       </Route>
       <Route path="Authentaction">
         <Route

@@ -25,7 +25,7 @@ function SignUp() {
     try {
       if (values.password !== values.confirmPassword)
         throw Error("Not the same password");
-      await Axios.post("/teacher", values);
+      await Axios.post("/students", values);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       toast.error(err?.response?.data?.message, {

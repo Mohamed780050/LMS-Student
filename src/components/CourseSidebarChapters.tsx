@@ -1,17 +1,20 @@
 import { RootState } from "@/Redux/store";
 import { Lock, PlayCircle } from "lucide-react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function CourseSidebarChapters() {
   const { chapters } = useSelector((state: RootState) => state.chapters);
   return (
     <>
-      <ul className="flex flex-col w-full gap-2">
+      <ul className="flex flex-col w-full gap-1">
         {chapters.map((chapter) => (
-          <Link to={`chapter/${chapter._id}`}>
+          <NavLink
+            to={`chapter/${chapter._id}`}
+            className={`text-slate-500 text-sm font-[500] cursor-pointer hover:text-slate-600 hover:bg-slate-300/20`}
+          >
             <li
-              className={`flex items-center gap-x-2 text-slate-500 text-sm font-[500] pl-6 transition-all hover:text-slate-600 hover:bg-slate-300/20 cursor-pointer ${
+              className={`flex items-center gap-x-2  pl-6 transition-all  ${
                 // chapter.active &&
                 // "text-slate-700 bg-slate-200/20 hover:bg-slate-200/20 hover:text-slate-700"
                 ""
@@ -31,7 +34,7 @@ function CourseSidebarChapters() {
                 <p>{chapter.chapterName}</p>
               </div>
             </li>
-          </Link>
+          </NavLink>
         ))}
       </ul>
     </>
