@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import ProtectedRoutes from "./pages/ProtectedRoutes";
 import CoursePage from "./pages/CoursePage";
 import CoursePageLayout from "@/Layout/CoursePageLayout";
+import ChapterPage from "./pages/ChapterPage";
 // TODO: search on chatGPT to know how to add and event listener to alway watch cookies
 const data = document.cookie
   .split(";")
@@ -74,7 +75,7 @@ const routes = createBrowserRouter(
               redirctedPath="Authentaction/login"
               isAllowed={isAllowed}
             >
-              <h1>Chapter Name</h1>
+              <ChapterPage />
             </ProtectedRoutes>
           }
         />

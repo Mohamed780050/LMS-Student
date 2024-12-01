@@ -1,7 +1,6 @@
 import CourseNavbar from "@/components/CourseNavbar";
 import CourseSidebar from "@/components/CourseSidebar";
 import getACourse from "@/config/getACourse";
-import CoursePage from "@/Routes/pages/CoursePage";
 import { useQuery } from "@tanstack/react-query";
 import { Outlet, useParams } from "react-router-dom";
 
