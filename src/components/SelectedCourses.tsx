@@ -17,7 +17,7 @@ function SelectedCourses() {
   });
   return (
     <>
-      <ul className="grid grid-cols-1  xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1 mt-4">
+      <ul className="grid grid-cols-1  xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 mt-4">
         {isLoading ? (
           <SelectedCoursesSkeleton />
         ) : (
@@ -37,7 +37,7 @@ function SelectedCourses() {
           </>
         )}
       </ul>
-      {!data?.length && !isLoading &&(
+      {!data?.length && !isLoading && (
         <div className="text-center mt-6 text-lg text-muted-foreground">
           No courses
         </div>
