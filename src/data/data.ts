@@ -10,7 +10,7 @@ import {
   FcSalesPerformance,
   FcSportsMode,
 } from "react-icons/fc";
-import { Compass, Video } from "lucide-react";
+import { Clock, Compass, Video } from "lucide-react";
 import React from "react";
 
 const NavBarLinks: NavBarLinksType[] = [
@@ -69,4 +69,11 @@ const CategoryItems = [
     label: "Engineering",
   },
 ];
-export default { NavBarLinks, LoginInputs, SignUpInputs, CategoryItems };
+const CourseData = [{ Icon: React.createElement(Clock, { size: 20 }) }];
+export default {
+  NavBarLinks,
+  LoginInputs,
+  SignUpInputs,
+  CategoryItems,
+  CourseData,
+};
