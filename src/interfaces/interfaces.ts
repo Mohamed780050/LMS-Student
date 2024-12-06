@@ -6,7 +6,7 @@ export interface NavBarLinksType {
   link: string;
 }
 export interface loginInputs {
-  name: "password" | "identfire";
+  name: "password" | "identifier";
   placeholder: string;
   type: string;
 }

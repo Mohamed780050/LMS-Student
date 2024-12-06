@@ -3,13 +3,13 @@ import { RootState } from "@/Redux/store";
 import { useSelector } from "react-redux";
 import data from "@/data/data";
 import CoursePageSkeleton from "@/components/Skeletons/CoursePageSkeleton";
+import EnrollButton from "@/components/EnrollButton";
 
 function CoursePage() {
   const { courseName, ImageURL, Description, price } = useSelector(
     (state: RootState) => state.CourseInfo.course
   );
   const { isCourseLoading } = useSelector((state: RootState) => state.global);
-
   return (
     <>
       {isCourseLoading ? (
@@ -31,9 +31,7 @@ function CoursePage() {
             <h1 className="text-xl font-semibold">{courseName}</h1>
             <pre className="my-2 text-wrap border-b pb-2">{Description}</pre>
             <div className="pt-2 flex items-center justify-between">
-              <Button className="bg-emerald-500 hover:bg-emerald-600">
-                Enroll
-              </Button>
+              <EnrollButton/>
               <p className="font-bold text-3xl">{price}$</p>
             </div>
           </div>

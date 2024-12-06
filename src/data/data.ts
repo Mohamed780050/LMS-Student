@@ -27,7 +27,7 @@ const NavBarLinks: NavBarLinksType[] = [
 ];
 
 const LoginInputs: loginInputs[] = [
-  { name: "identfire", placeholder: "Username or Email", type: "text" },
+  { name: "identifier", placeholder: "Username or Email", type: "text" },
   { name: "password", placeholder: "Password", type: "password" },
 ];
 const SignUpInputs: SignUpInputsType[] = [

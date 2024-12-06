@@ -22,8 +22,9 @@ function Login() {
   async function SubmitIt(values: z.infer<typeof validate.loginvalidation>) {
     try {
       date.setDate(date.getTime() * 1000 * 60 * 60 * 24 * 2);
-      const response = await Axios.post("/auth", values);
-      localStorage.setItem("userInfo", JSON.stringify(response.data.info));
+      const response = await Axios.post("/auth/student", values);
+      console.log(response)
+      localStorage.setItem("userInfo", JSON.stringify(response.data.userInfo));
       document.cookie =
         "lms-student" +
         "=" +
