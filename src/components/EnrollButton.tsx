@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import buyCourse from "@/config/buyCourse";
 import { useParams } from "react-router-dom";
-import toast from "react-hot-toast";
 
 function EnrollButton() {
   const [loading, setLoading] = useState(false);

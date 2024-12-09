@@ -55,3 +55,12 @@ export interface CourseChaptersInterface {
     full: string;
   };
 }
+export interface studentChapter {
+  chapter: string;
+  completed: boolean;
+}
+export interface studentCourse {
+  _id: string;
+  completed: boolean;
+  chapters: studentChapter[];
+}
