@@ -29,7 +29,7 @@ function CourseCard({
           />
         </div>
         <div className="flex flex-col pt-2">
-          <p className="text-lg md:text-base font-medium group-hover:text-sky-700 transition line-clamp-2">
+          <p className="text-lg md:text-base font-medium group-hover:text-sky-500 transition line-clamp-2">
             {courseName}
           </p>
           <p className="text-xs text-muted-foreground">{category}</p>
@@ -47,7 +47,7 @@ function CourseCard({
             </p>
           )}
           {showProgress && chaptersProgress && (
-            <div className="flex items-center justify-between space-x-2">
+            <div className="flex justify-center flex-col space-y-2">
               <div className="w-full bg-slate-500 rounded overflow-hidden relative h-2">
                 <span
                   className="bg-sky-500 absolute block h-full left-0 top-0"
@@ -63,13 +63,13 @@ function CourseCard({
                   }}
                 ></span>
               </div>
-              <span>
+              <span className="text-sm">
                 {
                   chaptersProgress.chapters.filter(
                     (chapter) => chapter.completed === true
                   ).length
                 }
-                %
+                % completed
               </span>
             </div>
           )}
