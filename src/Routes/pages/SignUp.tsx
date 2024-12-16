@@ -51,8 +51,8 @@ function SignUp() {
           <Logo />
           Sign Up
         </div>
-        {data.SignUpInputs.map((input) => (
-          <div>
+        {data.SignUpInputs.map((input,index) => (
+          <div key={index}>
             <Input
               type={input.type}
               placeholder={input.placeholder}

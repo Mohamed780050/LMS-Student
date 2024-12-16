@@ -57,8 +57,8 @@ function Login() {
           <Logo />
           Login
         </div>
-        {data.LoginInputs.map((input) => (
-          <div>
+        {data.LoginInputs.map((input, index) => (
+          <div key={index}>
             <Input
               type={input.type}
               placeholder={input.placeholder}
