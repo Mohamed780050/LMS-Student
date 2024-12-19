@@ -1,5 +1,5 @@
 import z from "zod";
-const loginvalidation = z.object({
+const loginValidation = z.object({
   identifier: z
     .string()
     .min(1, { message: "Field is empty" })
@@ -26,4 +26,4 @@ const signupValidation = z
     message: "Password doesn't match",
     path: ["confirmPassword"],
   });
-export default { loginvalidation, signupValidation };
+export default { loginValidation, signupValidation };

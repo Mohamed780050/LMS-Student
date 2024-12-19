@@ -1,43 +1,22 @@
 import { Moon, Sun } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
 import { useTheme } from "@/components/Provider/theme-provider";
 
 export function ModeToggle() {
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="justify-start">
-          <Sun
-            size={24}
-            className="mr-1 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-          />
-          <Moon
-            size={24}
-            className="mr-1 absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-          />
-          <span className="text-lg">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Button
+      className="justify-start space-x-2"
+      variant="ghost"
+      onClick={() => {
+        theme === "dark" ? setTheme("light") : setTheme("dark");
+      }}
+    >
+      {theme === "dark" ? <Moon size={24} /> : <Sun size={24} />}
+      <p className="text-lg">{theme}</p>
+    </Button>
   );
 }

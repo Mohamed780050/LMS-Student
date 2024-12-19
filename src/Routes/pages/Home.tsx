@@ -1,5 +1,6 @@
 import CourseCard from "@/components/CourseCard";
 import InfoCard from "@/components/InfoCard";
+import HomeSkeleton from "@/components/Skeletons/HomeSkeleton";
 import getStudentCourses from "@/config/getStudentCouses";
 import { CourseInfo } from "@/interfaces/interfaces";
 import { useQuery } from "@tanstack/react-query";
@@ -15,7 +16,7 @@ function Home() {
   return (
     <div className="p-6 space-y-4">
       {isLoading ? (
-        "loading"
+        <HomeSkeleton />
       ) : (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">

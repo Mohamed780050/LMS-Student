@@ -15,11 +15,11 @@ function Login() {
     handleSubmit,
     register,
     formState: { isSubmitting, errors },
-  } = useForm<z.infer<typeof validate.loginvalidation>>({
-    resolver: zodResolver(validate.loginvalidation),
+  } = useForm<z.infer<typeof validate.loginValidation>>({
+    resolver: zodResolver(validate.loginValidation),
   });
   const date = new Date();
-  async function SubmitIt(values: z.infer<typeof validate.loginvalidation>) {
+  async function SubmitIt(values: z.infer<typeof validate.loginValidation>) {
     try {
       date.setTime(date.getTime() + 1000 * 60 * 60 * 24 * 2);
       const response = await Axios.post("/auth/student", values);

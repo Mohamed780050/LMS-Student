@@ -19,7 +19,8 @@ function CourseCard({
   chaptersProgress?: studentCourse;
 }) {
   return (
-    <li className="group hover:shadow-sm transition overflow-hidden border rounded-lg p-3 h-full">
+    <li className="group hover:shadow-sm transition relative  bg-background border rounded-lg p-3 h-full hover:-translate-y-0.5">
+      <span className="w-full h-full border border-sky-500 absolute top-0 left-0 -z-[1] rounded-lg transition"></span>
       <Link to={`/course/${_id}`}>
         <div className="relative w-full aspect-video rounded-sm overflow-hidden">
           <img
